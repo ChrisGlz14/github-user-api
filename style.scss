@@ -1,0 +1,73 @@
+// Variables
+$background: #30374f;
+$secondaryColor:#eecfc4;
+$cardColor: #5e425f;
+
+
+body {
+    background-color: $background;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #fe495f;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.search {
+    margin: 0 auto;
+    
+   
+        input{  
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            box-shadow: 1px 1px 6px 1px;
+        }
+        
+        .btn-search{
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        
+        i {
+            font-size: 22px;
+            color: $secondaryColor;
+        }
+    }
+    
+    
+    .card {
+        display: flex;
+    border-radius: 5px;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    flex-direction: column;
+    background-color: $cardColor;
+    padding: 20px;
+    box-shadow: 1px 1px 15px 1px;
+    
+    .name {
+        text-align: center;
+    }
+    
+    .img-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .avatar-img {
+        border-radius: 50%;
+        width: 40%;
+        box-shadow: 1px 1px 15px 1px;
+    }
+}
