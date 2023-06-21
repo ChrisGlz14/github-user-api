@@ -1,43 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #30374f;
-  font-family: sans-serif;
+  background-color: #f75553;
+  font-family: -apple-system, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 h1 {
   text-align: center;
-  color: #fe495f;
+  color: #c9c9c9;
 }
 
 .flex-container {
   display: flex;
 }
 
-.search {
+.form {
   margin: 0 auto;
 }
-.search input {
-  padding: 10px;
+.form input {
+  background-color: #ffffff;
+  padding: 15px;
+  font-size: 20px;
   border: none;
   outline: none;
-  border-radius: 5px;
-  box-shadow: 1px 1px 6px 1px;
+  border-radius: 5000px;
+  color: #000000;
 }
-.search .btn-search {
+.form .btn-search {
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
-.search i {
-  font-size: 22px;
-  color: #eecfc4;
+.form i {
+  vertical-align: sub;
+  font-size: 25px;
+  color: #333;
 }
 
 .card {
   display: flex;
   border-radius: 5px;
-  width: 400px;
+  width: 600px;
+  border: 2px solid wheat;
   margin: 0 auto;
   margin-top: 50px;
   flex-direction: column;
@@ -48,12 +56,46 @@ h1 {
 .card .name {
   text-align: center;
 }
-.card .img-container {
-  display: flex;
-  justify-content: center;
+.card h3 {
+  text-align: center;
 }
 .card .avatar-img {
+  display: block;
+  margin: 0 auto;
   border-radius: 50%;
+  border: 2px solid wheat;
   width: 40%;
+  box-shadow: 1px 1px 15px 1px;
+}
+.card .bio {
+  font-size: 20px;
+}
+
+.data {
+  margin-bottom: 14px;
+}
+.data ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+.data ul li span {
+  font-size: 30px;
+  font-weight: bold;
+  color: #dad733;
+}
+
+.repos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.repos a {
+  text-decoration: none;
+  color: #c9c9c9;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: #f75553;
   box-shadow: 1px 1px 15px 1px;
 }/*# sourceMappingURL=style.css.map */

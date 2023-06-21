@@ -1,54 +1,67 @@
 // Variables
-$background: #30374f;
+$background: #f75553;
 $secondaryColor:#eecfc4;
 $cardColor: #5e425f;
 
 
+
+// General
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: $background;
-    font-family: sans-serif;
+    font-family: -apple-system, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 h1 {
     text-align: center;
-    color: #fe495f;
+    color: #c9c9c9;
 }
 
+// Search
 .flex-container {
     display: flex;
 }
 
-.search {
+.form {
     margin: 0 auto;
     
    
         input{  
-            padding: 10px;
+            background-color: #ffffff;
+            padding: 15px;
+            font-size: 20px;
             border: none;
             outline: none;
-            border-radius: 5px;
-            box-shadow: 1px 1px 6px 1px;
+            border-radius: 5000px;
+            color: #000000;
+
         }
-        
         .btn-search{
             border: none;
             background-color: transparent;
             cursor: pointer;
-        }
+                    }
+        
         
         i {
-            font-size: 22px;
-            color: $secondaryColor;
+            vertical-align: sub;
+            font-size: 25px;
+            color: #333;
         }
     }
     
     
+    // CARD
     .card {
-        display: flex;
+    display: flex;
     border-radius: 5px;
-    width: 400px;
+    width: 600px;
+    border: 2px solid wheat;
     margin: 0 auto;
     margin-top: 50px;
     flex-direction: column;
@@ -59,15 +72,60 @@ h1 {
     .name {
         text-align: center;
     }
-    
-    .img-container {
-        display: flex;
-        justify-content: center;
+    h3 {
+        text-align: center;
     }
 
     .avatar-img {
+        display: block;
+        margin: 0 auto;
         border-radius: 50%;
+        border: 2px solid wheat;
         width: 40%;
+        box-shadow: 1px 1px 15px 1px;
+    }
+
+    .bio {
+        font-size: 20px;
+    }
+}
+
+
+// DATA
+
+.data {
+    margin-bottom: 14px;
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+
+        li {
+
+            span {
+                font-size: 30px ;
+                font-weight: bold;
+                color: #dad733;  
+            }
+        }
+    }
+}
+
+
+// REPOS
+
+.repos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    
+    a {
+        text-decoration: none;
+        color: #c9c9c9;
+        border-radius: 7px;
+        padding: 10px;
+        background-color: #f75553;
         box-shadow: 1px 1px 15px 1px;
     }
 }
