@@ -1,101 +1,107 @@
+/* General */
 * {
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  background-color: #f75553;
-  font-family: -apple-system, sans-serif;
-  margin: 0;
-  padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: sans-serif;
+background-color: gray;
 }
 
-h1 {
-  text-align: center;
-  color: #c9c9c9;
+/* GitHub */
+.github {
+  background-color: rgb(132, 98, 160);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 3px black;
+  max-width: 568px;
+  min-width: 320px;
+  width: 100%;
 }
 
-.flex-container {
-  display: flex;
+/* Search */
+.search {
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
-.form {
-  margin: 0 auto;
-}
-.form input {
-  background-color: #ffffff;
-  padding: 15px;
-  font-size: 20px;
+.search input {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.5rem;
   border: none;
-  outline: none;
-  border-radius: 5000px;
-  color: #000000;
-}
-.form .btn-search {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-.form i {
-  vertical-align: sub;
-  font-size: 25px;
-  color: #333;
+  border-radius: .5rem;
 }
 
-.card {
-  display: flex;
-  border-radius: 5px;
-  width: 600px;
-  border: 2px solid wheat;
-  margin: 0 auto;
-  margin-top: 50px;
-  flex-direction: column;
-  background-color: #5e425f;
-  padding: 20px;
-  box-shadow: 1px 1px 15px 1px;
+/* Usercard */
+.usercard {
+  color: white;
+  font-size: 1.5rem;
+
 }
-.card .name {
-  text-align: center;
-}
-.card h3 {
-  text-align: center;
-}
-.card .avatar-img {
+
+.usercard img {
   display: block;
   margin: 0 auto;
+  max-width: 200px;
+  border: 3px solid rgb(255, 255, 255);
   border-radius: 50%;
-  border: 2px solid wheat;
-  width: 40%;
-  box-shadow: 1px 1px 15px 1px;
-}
-.card .bio {
-  font-size: 20px;
+  box-shadow: 2px 2px 3px black;
 }
 
+.usercard h1 {
+  font-size:2rem;
+  text-align: center;
+}
+
+.usercard h2 {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.usercard p {
+  text-align: center;
+}
+
+/* Data */
 .data {
-  margin-bottom: 14px;
+  margin-bottom: 2rem;
 }
+
 .data ul {
+  margin: 0;
+  padding: 0;
   display: flex;
+  list-style-type: none;
   justify-content: space-evenly;
-  list-style: none;
 }
+
 .data ul li span {
   font-size: 30px;
   font-weight: bold;
-  color: #dad733;
+  color: rgb(32, 32, 32);
 }
 
+/* Repos */
 .repos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  text-align: center;
 }
+
 .repos a {
   text-decoration: none;
-  color: #c9c9c9;
-  border-radius: 7px;
-  padding: 10px;
-  background-color: #f75553;
-  box-shadow: 1px 1px 15px 1px;
-}/*# sourceMappingURL=style.css.map */
+  color: white;
+  background-color: rgb(78, 36, 146);
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, .5);
+  margin: .4rem;
+  display: inline-block;
+}

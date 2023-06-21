@@ -1,20 +1,21 @@
-// Obtengo los elementos del buscador
-const form = document.querySelector(".form");
-const search = document.getElementById("inputsearch");
+// Obtener el formulario
+const form = document.getElementById("form");
 
-//Obtengo la card del usuario 
-const userCard = document.getElementById("userCard")
+// Obtener la barra de búsqueda
+const search = document.getElementById("search");
 
-// Añado add event listener
+// Obtener el widget del usuario
+const userCard = document.getElementById("usercard");
+
+// Escuchar el evento submit del form
 form.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  const userName = search.value.trim();
-  getUserData(userName);
+  const username = search.value;
+  getUserData(username);
   search.value = "";
 });
 
-//Funcion para busqueda de informacion del user
-
+// Obtener la info. del usuario en GitHub
 async function getUserData(username) {
   const API = "https://api.github.com/users/";
 
@@ -22,59 +23,60 @@ async function getUserData(username) {
     const userRequest = await fetch(API + username);
 
     if (!userRequest.ok) {
-        throw new Error(userRequest.status)
+      throw new Error(userRequest.status);
     }
- 
+
     const userData = await userRequest.json();
 
     if (userData.public_repos) {
-      const reposRequest = await fetch(
-        `https://api.github.com/users/${username}/repos`
-      );
+      const reposRequest = await fetch(`https://api.github.com/users/${username}/repos` );
       const reposData = await reposRequest.json();
-
-      userData.repos = reposData
-
+      userData.repos = reposData;
     }
 
     showUserData(userData);
   } catch (error) {
-    console.log(error.message);
+    showError(error.message);
   }
 }
 
-// Funcion para mostrar informacion html 
-
+// Función para elementos HTML
 function showUserData(userData) {
-
-    let userContent = `
-      <img class="avatar-img" src="${userData.avatar_url}" alt="imagen de perfil" />
-      <h2 class="name">${userData.name}</h2>
-      <h3>${userData.location}</h3>
-      <p class="bio">${userData.bio}</p>
-
-      <section class="data">
+  
+  let userContent = `
+            <img src="${userData.avatar_url}" alt="Avatar">
+            <h1>${userData.name}</h1>
+            <h2>${userData.location}</h2>
+            <p>${userData.bio}</p>
+            
+            <section class="data">
                 <ul>
-                    <li>Followers: ${userData.followers}</li>
-                    <li>Following: ${userData.following}</li>
-                    <li>Repos: ${userData.public_repos}</li>
+                    <li>Followers:<span> ${userData.followers}</span></li>
+                    <li>Following:<span> ${userData.following}</span></li>
+                    <li>Repos:<span> ${userData.public_repos}</span></li>
                 </ul>
-      </section>
-
-      <section class="repos">
-        <a href="#">Repo 1</a><a href="#">Repo 2</a><a href="#">Repo 3</a
-        ><a href="#">Repo 4</a><a href="#">Repo 5</a><a href="#">Repo 6</a
-        ><a href="#">Repo 7</a>
-      </section>
+            </section>
     `;
-    userCard.innerHTML = userContent;
+
+  if (userData.repos) {
+    userContent += `<section class="repos">`
+
+    userData.repos.slice(0, 7).forEach(repo => {
+        userContent += `<a href="${repo.html_url}" target="_blank">${repo.name}</a>`
+    })
+
+    userContent +=`</section>`;
+  }
+
+
+
+  userCard.innerHTML = userContent;
 }
 
-
-//Funcion para gestionar Errores
-
+// Función para gestionar los errores
 function showError(error) {
-
-
+    const errorContent = `<h1>Error ⚠️ ${error}</h1>`
+    userCard.innerHTML = errorContent
 }
+
 
